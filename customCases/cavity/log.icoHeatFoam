@@ -1,0 +1,67 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2412                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _f00230df-20250528 OPENFOAM=2412 patch=250528 version=2412
+Arch   : "LSB;label=32;scalar=64"
+Exec   : icoHeatFoam
+Date   : Aug 22 2025
+Time   : 20:15:43
+Host   : HAQUANGHUY
+PID    : 3338
+I/O    : uncollated
+Case   : /home/huyquangha/OpenFOAM/huyquangha-v2412/run/C_OpenFoam_Practice/customCases/cavity
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PISO: Operating solver in PISO mode
+
+Reading transportProperties
+
+Reading field p
+
+Reading field U
+
+Reading field T
+
+Reading/calculating face flux field phi
+
+
+Starting time loop
+
+Time = 0.005
+
+Courant Number mean: 0 max: 0
+smoothSolver:  Solving for Ux, Initial residual = 1, Final residual = 8.90511e-06, No Iterations 19
+smoothSolver:  Solving for Uy, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 0.0492854, No Iterations 12
+time step continuity errors : sum local = 0.000466513, global = -1.79995e-19, cumulative = -1.79995e-19
+DICPCG:  Solving for p, Initial residual = 0.590864, Final residual = 2.65225e-07, No Iterations 35
+time step continuity errors : sum local = 2.74685e-09, global = -2.6445e-19, cumulative = -4.44444e-19
+
+
+--> FOAM FATAL IO ERROR: (openfoam-2412 patch=250528)
+Unknown asymmetric matrix solver type BICCG
+
+Valid asymmetric matrix solver types :
+4(GAMG PBiCG PBiCGStab smoothSolver)
+
+
+file: system/fvSolution/solvers/T at line 29 to 32.
+
+    From static Foam::autoPtr<Foam::lduMatrix::solver> Foam::lduMatrix::solver::New(const Foam::word&, const Foam::word&, const Foam::lduMatrix&, const Foam::FieldField<Foam::Field, double>&, const Foam::FieldField<Foam::Field, double>&, const lduInterfaceFieldPtrsList&, const Foam::dictionary&)
+    in file matrices/lduMatrix/lduMatrix/lduMatrixSolver.C at line 104.
+
+FOAM exiting
+
